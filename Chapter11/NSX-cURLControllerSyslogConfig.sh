@@ -1,0 +1,1 @@
+curl -k -X POST https://nsxmgr-01a.corp.local/api/2.0/vdn/controller/controller-1/syslog -H "Accept: application/xml" -H "Content-Type: application/xml" -u admin:VMware1! -d "<controllerSyslogServer><syslogServer>log-01a.corp.local</syslogServer><port>514</port><protocol>UDP</protocol><level>INFO</level></controllerSyslogServer>"

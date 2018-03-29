@@ -1,0 +1,60 @@
+{
+	"info": {
+		"name": "Chapter 11",
+		"_postman_id": "5f6e018a-efa8-145e-f7b4-ca2ee96f5d65",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "NSX-ControllerSyslogConfig",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "VMware1!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<controllerSyslogServer>\n  <syslogServer>log-01a.corp.local</syslogServer>\n  <port>514</port>\n  <protocol>UDP</protocol>\n  <level>INFO</level>\n</controllerSyslogServer>"
+				},
+				"url": {
+					"raw": "https://nsxmgr-01a.corp.local/api/2.0/vdn/controller/controller-1/syslog",
+					"protocol": "https",
+					"host": [
+						"nsxmgr-01a",
+						"corp",
+						"local"
+					],
+					"path": [
+						"api",
+						"2.0",
+						"vdn",
+						"controller",
+						"controller-1",
+						"syslog"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

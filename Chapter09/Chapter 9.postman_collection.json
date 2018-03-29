@@ -1,0 +1,67 @@
+{
+	"info": {
+		"name": "Chapter 9",
+		"_postman_id": "97c3f5d3-01ac-87ea-1a4e-168653b31744",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "NSX-SetCLIUserRole",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "VMware1!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<accessControlEntry>\n  <role>enterprise_admin</role>\n  <resource>\n    <resourceId>globalroot-0</resourceId>\n  </resource>\n</accessControlEntry>"
+				},
+				"url": {
+					"raw": "https://nsxmgr-01a.corp.local/api/2.0/services/usermgmt/role/john?isCli=true",
+					"protocol": "https",
+					"host": [
+						"nsxmgr-01a",
+						"corp",
+						"local"
+					],
+					"path": [
+						"api",
+						"2.0",
+						"services",
+						"usermgmt",
+						"role",
+						"john"
+					],
+					"query": [
+						{
+							"key": "isCli",
+							"value": "true",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

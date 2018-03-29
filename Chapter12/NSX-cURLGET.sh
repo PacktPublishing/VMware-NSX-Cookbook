@@ -1,0 +1,1 @@
+curl -k -X POST https://nsxmgr-01a.corp.local/api/2.0/services/usermgmt/user/admin -H "Accept: application/xml" -H "Content-Type: application/xml" -u admin:VMware1!

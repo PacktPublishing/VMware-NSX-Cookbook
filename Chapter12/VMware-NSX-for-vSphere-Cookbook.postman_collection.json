@@ -1,0 +1,217 @@
+{
+	"info": {
+		"name": "VMware-NSX-for-vSphere-Cookbook",
+		"_postman_id": "314c0ef6-f135-4118-c7af-9ab738f3e059",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "NSX-PostmanGET",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "VMware1!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://nsxmgr-01a.corp.local/api/2.0/services/usermgmt/user/admin",
+					"protocol": "https",
+					"host": [
+						"nsxmgr-01a",
+						"corp",
+						"local"
+					],
+					"path": [
+						"api",
+						"2.0",
+						"services",
+						"usermgmt",
+						"user",
+						"admin"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "NSX-SetCLIUserRole",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "VMware1!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<accessControlEntry>\n\t<role>enterprise_admin</role>\n\t<resource>\n\t\t<resourceId>globalroot-0</resourceId>\n\t</resource>\n</accessControlEntry>"
+				},
+				"url": {
+					"raw": "https://nsxmgr-01a.corp.local/api/2.0/services/usermgmt/role/john?isCli=true",
+					"protocol": "https",
+					"host": [
+						"nsxmgr-01a",
+						"corp",
+						"local"
+					],
+					"path": [
+						"api",
+						"2.0",
+						"services",
+						"usermgmt",
+						"role",
+						"john"
+					],
+					"query": [
+						{
+							"key": "isCli",
+							"value": "true",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "NSX-PostmanPOST",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "VMware1!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<virtualWireCreateSpec>\r\n  <name>Postman-Logical-Switch</name>\r\n  <description>Logical Switch created from Postman</description>\r\n  <tenantId>Postman Tenant</tenantId>\r\n  <controlPlaneMode>UNICAST_MODE</controlPlaneMode>\r\n  <guestVlanAllowed>false</guestVlanAllowed>\r\n</virtualWireCreateSpec>"
+				},
+				"url": {
+					"raw": "https://nsxmgr-01a.corp.local/api/2.0/vdn/scopes/vdnscope-1/virtualwires",
+					"protocol": "https",
+					"host": [
+						"nsxmgr-01a",
+						"corp",
+						"local"
+					],
+					"path": [
+						"api",
+						"2.0",
+						"vdn",
+						"scopes",
+						"vdnscope-1",
+						"virtualwires"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "NSX-ControllerSyslogConfig",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "VMware1!",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<controllerSyslogServer>\n  <syslogServer>log-01a.corp.local</syslogServer>\n  <port>514</port>\n  <protocol>UDP</protocol>\n  <level>INFO</level>\n</controllerSyslogServer>"
+				},
+				"url": {
+					"raw": "https://nsxmgr-01a.corp.local/api/2.0/vdn/controller/controller-1/syslog",
+					"protocol": "https",
+					"host": [
+						"nsxmgr-01a",
+						"corp",
+						"local"
+					],
+					"path": [
+						"api",
+						"2.0",
+						"vdn",
+						"controller",
+						"controller-1",
+						"syslog"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
