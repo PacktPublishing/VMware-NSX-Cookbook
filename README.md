@@ -22,7 +22,7 @@ The code will look like the following:
 ## Related Products
 * [VMware vSphere 6.5 Cookbook - Third Edition](https://www.packtpub.com/virtualization-and-cloud/vmware-vsphere-65-cookbook-third-edition)
 
-* [Learning VMware NSX - Second Edition](https://www.packtpub.com/virtualization-and-cloud/learning-vmware-nsx-second-editionn)
+* [Learning VMware NSX - Second Edition](https://www.packtpub.com/virtualization-and-cloud/learning-vmware-nsx-second-edition)
 
 * [Mastering VMware vSphere 6.5](https://www.packtpub.com/virtualization-and-cloud/mastering-vmware-vsphere-65)
 
